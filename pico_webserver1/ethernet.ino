@@ -1,5 +1,5 @@
 
-cnf_network set_default_network()
+cnf_network get_default_network()
 {
   cnf_network netinfo;
 
@@ -43,7 +43,7 @@ void init_ethernet()
   cnf_network netinfo;
   
   EEPROM.get(CNF_OFFSET_NETWORK, netinfo);
-  //netinfo = set_default_network();
+  //netinfo = get_default_network();
 
   Ethernet.init(17);
     
