@@ -43,7 +43,9 @@ void init_ethernet()
   cnf_network netinfo;
   
   EEPROM.get(CNF_OFFSET_NETWORK, netinfo);
-  //netinfo = get_default_network();
+  if(netinfo.ip[0] == 0) {
+    netinfo = get_default_network();
+  }
 
   Ethernet.init(17);
     
